@@ -41,7 +41,11 @@ def register(request):
 		form = MyRegistrationForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return render_to_response('index.html',{'er':'Registration Successful!'})
+		args = {}
+		args.update(csrf(request))
+		args['error'] = 'Registration Successful!'
+		return render_to_response('index.html',args)
+
 
 	args = {}
 	args.update(csrf(request))

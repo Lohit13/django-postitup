@@ -83,9 +83,9 @@ body { background: url(http://demo.themeinprogress.com/nova/wp-content/themes/no
 
 <font color="black" style="font-family:Raleway;" size=20 >Register!</font><br>
 
-                <form class="text-align:center;" action="/user/create/" method="post" enctype="multipart/form-data">{% csrf_token %}<br><br>
+                <form class="text-align:center;" action="/user/register/" method="post" enctype="multipart/form-data">{% csrf_token %}<br><br>
                     {{ form|bootstrap }}
-                    <br><input class="btn btn-default" type="submit" value="Create Post">
+                    <br><input class="btn btn-default" type="submit" value="Register!">
 
                 </form>
 

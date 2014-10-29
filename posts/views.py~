@@ -63,6 +63,7 @@ def myposts(request):
 				print stalk.ctr
 				L.append(stalk.stalker.username)
 				stalk.ctr=0
+				stalk.save()
 
 
 		args['stalks']= L
@@ -83,7 +84,7 @@ def create(request):
 			f2.pub_date = datetime.datetime.now()
 			f2.user = request.user
 		        f2.save()
-			return HttpResponseRedirect('/user/myposts')
+			return myposts(request)
 	else:
 		form = PostForm()
 		args = {}

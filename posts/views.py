@@ -84,7 +84,7 @@ def create(request):
 			f2.pub_date = datetime.datetime.now()
 			f2.user = request.user
 		        f2.save()
-			return HttpResponseRedirect('/user/myposts')
+			return myposts(request)
 	else:
 		form = PostForm()
 		args = {}
